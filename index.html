@@ -3,22 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>East Kala — Coming Soon | Artistry & Heritage</title>
+    <title>East Kala — Coming Soon | Artistry in Bloom</title>
     
-    <!-- Favicon from current working directory (./favicon.ico) -->
+    <!-- Favicon from current working directory (supports .ico and .png) -->
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-    <!-- Optional: support for PNG favicon if needed -->
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
     
-    <!-- Google Fonts: Playfair Display (Serif), Great Vibes (Script), Montserrat -->
+    <!-- Google Fonts: Playfair Display (Serif), Great Vibes (Script), Montserrat (Sans) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
-        /* --- COLOR PALETTE (ELEGANT BURGUNDY & CREAM) --- */
+        /* --- COLOR PALETTE (Deep Burgundy & Warm Cream) --- */
         :root {
             --deep-burgundy: #2D0A12;
             --warm-cream: #F1E3CE;
@@ -35,8 +34,8 @@
         }
 
         body {
-            /* BG IMAGE from ./img.png with gentle dark overlay for readability */
-            background: linear-gradient(135deg, var(--overlay-dark) 0%, rgba(45, 10, 18, 0.85) 100%), url('./img.png');
+            /* BG IMAGE from ./img.png with elegant dark overlay */
+            background: linear-gradient(135deg, var(--overlay-dark) 0%, rgba(45, 10, 18, 0.88) 100%), url('./img.png');
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
@@ -51,7 +50,7 @@
             position: relative;
         }
 
-        /* Subtle glowing aura (ethereal motion) */
+        /* Ethereal glow animation */
         body::before {
             content: '';
             position: absolute;
@@ -60,19 +59,19 @@
             transform: translate(-50%, -50%);
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(140, 106, 106, 0.28) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(140, 106, 106, 0.3) 0%, transparent 70%);
             z-index: 0;
             border-radius: 50%;
-            animation: breathe 6s ease-in-out infinite alternate;
+            animation: breathe 7s ease-in-out infinite alternate;
             pointer-events: none;
         }
 
         @keyframes breathe {
             0% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
-            100% { transform: translate(-50%, -50%) scale(1.25); opacity: 0.9; }
+            100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.85; }
         }
 
-        /* --- CENTER CONTENT LAYER --- */
+        /* --- CENTER CONTAINER --- */
         .container {
             position: relative;
             z-index: 2;
@@ -80,7 +79,6 @@
             max-width: 720px;
             width: 90%;
             padding: 24px 20px;
-            backdrop-filter: blur(0px);
             animation: fadeSlideUp 0.9s ease-out;
         }
 
@@ -89,7 +87,7 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- LOGO & FLORAL DETAILS (Recreating the refined identity) --- */
+        /* --- LOGO & FLORAL EMBLEM --- */
         .logo-wrapper {
             position: relative;
             display: inline-block;
@@ -116,7 +114,7 @@
             text-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
 
-        /* floral motif (rose crest & delicate lines) */
+        /* rose crest + delicate lines */
         .floral-divider {
             position: relative;
             display: flex;
@@ -132,7 +130,6 @@
             justify-content: center;
             align-items: center;
             gap: 20px;
-            background: transparent;
         }
 
         .rose-icon {
@@ -151,7 +148,6 @@
             fill: var(--muted-rose);
             stroke: #5a3a3a;
             stroke-width: 0.6;
-            transition: fill 0.3s;
         }
 
         .rose-center {
@@ -202,7 +198,7 @@
             line-height: 1.75;
         }
 
-        /* --- EMAIL SIGNUP FORM (refined) --- */
+        /* --- EMAIL SECTION (Read-only, only alert on click) --- */
         .notify-form {
             display: flex;
             justify-content: center;
@@ -212,6 +208,7 @@
             margin: 0 auto;
         }
 
+        /* Input is now read-only, visually similar but with faint pattern */
         .notify-form input {
             flex: 1;
             padding: 16px 20px;
@@ -225,11 +222,20 @@
             min-width: 220px;
             transition: all 0.25s ease;
             backdrop-filter: blur(2px);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        /* read-only subtle style — indicates it's not editable */
+        .notify-form input:read-only {
+            background: rgba(255, 255, 255, 0.04);
+            cursor: pointer;
+            border-color: rgba(218, 195, 176, 0.5);
         }
 
         .notify-form input:focus {
             border-color: var(--dark-gold);
-            background: rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.1);
             box-shadow: 0 0 0 2px rgba(218, 195, 176, 0.2);
         }
 
@@ -238,6 +244,7 @@
             font-weight: 300;
         }
 
+        /* Button: now triggers same soft alert, no actual submission */
         .notify-form button {
             background-color: var(--warm-cream);
             color: var(--deep-burgundy);
@@ -260,7 +267,7 @@
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
         }
 
-        /* --- MESSAGE AREA (both for submit feedback and soft alerts) --- */
+        /* alert message styling (soft alert) */
         .form-message {
             margin-top: 20px;
             font-weight: 400;
@@ -270,14 +277,14 @@
             min-height: 52px;
             transition: all 0.2s;
             color: var(--dark-gold);
-            background: rgba(0,0,0,0.2);
+            background: rgba(0,0,0,0.25);
             display: inline-block;
             padding: 8px 18px;
             border-radius: 30px;
             backdrop-filter: blur(2px);
         }
 
-        /* subtle footer */
+        /* footer elegance */
         .footer-note {
             margin-top: 50px;
             font-size: 0.7rem;
@@ -285,10 +292,9 @@
             color: rgba(241, 227, 206, 0.35);
             letter-spacing: 2.5px;
             text-transform: uppercase;
-            word-spacing: 2px;
         }
 
-        /* --- RESPONSIVE (mobile-first elegance) --- */
+        /* --- RESPONSIVE adjustments --- */
         @media (max-width: 768px) {
             .logo-text-east { font-size: 3rem; }
             .logo-text-kala { font-size: 3.4rem; margin-left: -6px; }
@@ -322,26 +328,23 @@
 <body>
 
 <div class="container">
-    <!-- BRAND LOGO + FLORAL ELEGANCE -->
+    <!-- LOGO + FLORAL SIGNATURE -->
     <div class="logo-wrapper">
         <div>
             <span class="logo-text-east">East</span>
             <span class="logo-text-kala">Kala</span>
         </div>
         
-        <!-- handcrafted floral motif (rose in full bloom) -->
+        <!-- Floral crest (handcrafted rose motif) -->
         <div class="floral-divider">
             <div class="flower-crest">
-                <!-- left decorative line (hidden on small) -->
                 <div class="line-stem left"></div>
                 <div class="rose-icon">
                     <svg class="rose-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="heritage rose emblem">
-                        <!-- Layered petals inspired by classic Mughal & Persian art -->
                         <path class="rose-petal" d="M50,12 C38,32 18,42 12,62 C30,72 48,82 50,92 C52,82 70,72 88,62 C82,42 62,32 50,12 Z" opacity="0.92"/>
                         <path class="rose-petal" d="M50,22 C22,32 16,52 12,72 C32,62 48,80 50,92 C52,80 68,62 88,72 C84,52 78,32 50,22 Z" opacity="0.8" transform="rotate(28, 50, 52)"/>
                         <path class="rose-petal" d="M50,18 C28,30 18,48 14,68 C34,58 48,78 50,92 C52,78 66,58 86,68 C82,48 72,30 50,18 Z" opacity="0.85" transform="rotate(-26, 50, 54)"/>
                         <ellipse class="rose-center" cx="50" cy="62" rx="11" ry="17" transform="rotate(-12, 50, 62)"/>
-                        <!-- delicate leaves / vine details -->
                         <path d="M12,78 C30,72 26,54 32,34" stroke="#a56b5a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
                         <path d="M22,58 C38,52 46,62 50,74" stroke="#a56b5a" stroke-width="2" fill="none" stroke-linecap="round"/>
                     </svg>
@@ -351,7 +354,7 @@
         </div>
     </div>
 
-    <!-- COMING SOON POETRY -->
+    <!-- COMING SOON MESSAGE -->
     <h2 class="main-title">
         Something Beautiful is <br><span>Blooming</span>
     </h2>
@@ -359,11 +362,15 @@
         Artistry, heritage, and elegance converge. We are preparing a collection that tells stories of timeless craft.
     </p>
 
-    <!-- SUBSCRIPTION FORM -->
-    <form class="notify-form" id="subscribeForm">
-        <input type="email" id="emailInput" placeholder="Enter your email address" autocomplete="email" aria-label="Email address for launch notification">
-        <button type="submit" aria-label="Notify me when East Kala launches">Notify Me</button>
-    </form>
+    <!-- EMAIL "FIELD" – READ ONLY, ALERT ON CLICK -->
+    <div class="notify-form">
+        <input type="email" id="emailInput" 
+               placeholder="✧ Server offline — click for update ✧" 
+               readonly 
+               value=""
+               aria-label="Notification signup temporarily unavailable">
+        <button type="button" id="alertButton">Notify Me</button>
+    </div>
     <div id="feedbackMessage" class="form-message"></div>
 
     <div class="footer-note">
@@ -374,91 +381,104 @@
 <script>
     (function() {
         // DOM elements
-        const emailInput = document.getElementById('emailInput');
-        const subscribeForm = document.getElementById('subscribeForm');
+        const emailField = document.getElementById('emailInput');
+        const alertBtn = document.getElementById('alertButton');
         const messageDiv = document.getElementById('feedbackMessage');
         
-        // Timer for clearing auto-messages (to avoid overlapping timeouts)
         let messageTimeout = null;
 
-        /**
-         * Elegant soft alert utility: displays non-blocking message 
-         * with auto-fade after duration (default = 3500ms)
-         * @param {string} text - Message to display
-         * @param {number} duration - milliseconds to show the alert
-         * @param {string} customColor - optional CSS color (default dark gold)
-         */
-        function showSoftMessage(text, duration = 3500, customColor = "#DAC3B0") {
-            // Clear any pending auto-hide timeout
+        // Soft alert: displays server unavailable message elegantly
+        function showServerAlert(customMessage) {
+            // Clear any existing timeout to avoid overlap
             if (messageTimeout) {
                 clearTimeout(messageTimeout);
                 messageTimeout = null;
             }
-            // Update message content & style
+            
+            const alertText = customMessage || "✨ Server Unavailable — Please wait for some time ✨";
             if (messageDiv) {
-                messageDiv.textContent = text;
-                messageDiv.style.color = customColor;
+                messageDiv.textContent = alertText;
+                messageDiv.style.color = "#E6D5B8";
                 messageDiv.style.opacity = '1';
-                messageDiv.style.transition = 'opacity 0.2s';
             }
-            // Auto clear after defined duration
+            
+            // Auto-clear after 3.5 seconds
             messageTimeout = setTimeout(() => {
                 if (messageDiv) {
                     messageDiv.textContent = "";
-                    messageDiv.style.opacity = '0.95';
                 }
                 messageTimeout = null;
-            }, duration);
+            }, 3500);
         }
-
-        // ----- REQUIREMENT: SOFT ALERT ON CLICK INSIDE EMAIL SECTION -----
-        // When user clicks (or taps) the email input field, show custom soft alert:
-        // "Server Unavailable Wait for some time"
-        if (emailInput) {
-            const emailClickHandler = function(event) {
-                // Prevents event bubbling conflicts, shows gentle message as requested
-                // Soft alert with server unavailable note, reflective of "backend not ready" state
-                showSoftMessage("✨ Server Unavailable — Please wait for some time ✨", 3200, "#E6D5B8");
-                // Optional: tiny haptic (just stylistic, no error)
-                event.stopPropagation ? event.stopPropagation() : null;
-            };
-            // Use 'click' event as per requirement ("clins in the email section")
-            emailInput.addEventListener('click', emailClickHandler);
-            // Also add subtle focus for better UX but click is primary per spec
-            // However to ensure touch devices and extra attention, we keep only click as requested.
-            // (We strictly adhere to requirement: clicking inside email triggers soft alert)
-        }
-
-        // ----- FORM SUBMIT HANDLER (existing functionality preserved, with elegance) -----
-        if (subscribeForm) {
-            subscribeForm.addEventListener('submit', function(e) {
+        
+        // REQUIREMENT: clicking on email section triggers soft alert & no entry allowed
+        if (emailField) {
+            // Make absolutely sure it's read-only (already set in HTML but enforce)
+            emailField.readOnly = true;
+            
+            // On click or tap -> show "Server Unavailable Wait for some time"
+            emailField.addEventListener('click', function(e) {
                 e.preventDefault();
-                const email = emailInput.value.trim();
-                
-                // Basic email validation (standard)
-                if (!email || !email.includes('@') || !email.includes('.') || email.length < 5) {
-                    showSoftMessage("🌸 Please enter a valid email address.", 2800, "#DAC3B0");
-                    return;
+                showServerAlert("✨ Server Unavailable — Please wait for some time ✨");
+                // Also slight visual feedback: add quick blink effect
+                emailField.style.transform = "scale(0.99)";
+                setTimeout(() => { if(emailField) emailField.style.transform = ""; }, 120);
+            });
+            
+            // Also on focus (some devices might focus via keyboard) ensure same behavior
+            emailField.addEventListener('focus', function(e) {
+                e.preventDefault();
+                showServerAlert("✨ Server Unavailable — Please wait for some time ✨");
+                // Prevent any typing by blurring quickly? But readOnly already blocks typing
+                // However we also keep from virtual keyboard (since readonly, no keyboard should edit)
+                if (document.activeElement === emailField) {
+                    // Optional: keep focus but no harm, readonly prevents input
                 }
-                
-                // Mock success message (since backend not active, just frontend preview)
-                showSoftMessage("✨ Thank you, kindred spirit! We'll notify you when East Kala unfolds. ✨", 4000, "#DAC3B0");
-                // Clear input field to show reset
-                emailInput.value = "";
-                
-                // NOTE: According to the requirement, the email subscription is a mock.
-                // In a production scenario, you would call an actual API endpoint.
-                // No actual server call because server is "unavailable" — but the submit uses pleasant frontend feedback.
-                // We also do not conflict with the click alert.
+            });
+            
+            // Disable any possible key input from sneaky users
+            emailField.addEventListener('keydown', function(e) {
+                e.preventDefault();
+                showServerAlert("✨ Server Unavailable — Please wait for some time ✨");
+                return false;
+            });
+            
+            // Also ensure placeholder text indicates unavailability
+            emailField.placeholder = "✧ Server offline — tap/click for update ✧";
+        }
+        
+        // The "Notify Me" button should also show the same alert, because server is unavailable
+        if (alertBtn) {
+            alertBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                showServerAlert("✨ Server Unavailable — Please wait for some time ✨");
+                // optional extra haptic feedback
+                alertBtn.style.transform = "translateY(1px)";
+                setTimeout(() => { if(alertBtn) alertBtn.style.transform = ""; }, 100);
             });
         }
-
-        // Optional: Additional graceful handling if someone clicks the email field multiple times
-        // The soft alert resets timer and shows updated message each click, which is user-friendly.
         
-        // Additionally, any other click inside the container? No, only email input is required.
-        // Provide subtle console log for debugging (non-intrusive)
-        console.log("East Kala | Coming Soon | Soft alert ready on email field | Background image from ./img.png");
+        // Any attempt to interact with surrounding form elements: ensure no submission or email sending occurs.
+        // Since we have no actual form submission (button type="button"), no default submit action.
+        // But in case the wrapper div gets any form-like behavior, prevent default.
+        const formWrapper = document.querySelector('.notify-form');
+        if (formWrapper) {
+            formWrapper.addEventListener('submit', function(e) {
+                e.preventDefault();
+                showServerAlert("✨ Server Unavailable — Please wait for some time ✨");
+                return false;
+            });
+        }
+        
+        // Also capture any paste, copy, cut inside email input — disable all
+        if (emailField) {
+            emailField.addEventListener('paste', (e) => { e.preventDefault(); showServerAlert("✨ Server Unavailable — Please wait for some time ✨"); });
+            emailField.addEventListener('cut', (e) => { e.preventDefault(); showServerAlert("✨ Server Unavailable — Please wait for some time ✨"); });
+            emailField.addEventListener('drop', (e) => { e.preventDefault(); showServerAlert("✨ Server Unavailable — Please wait for some time ✨"); });
+        }
+        
+        // Console info (non-intrusive)
+        console.log("East Kala · Coming Soon | Email entry disabled — only soft alert on click | BG: ./img.png | Favicon from CWD");
     })();
 </script>
 </body>
